@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="vendor/normalize.css" rel="stylesheet">
+		<link href="vendor/flickity.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<title>Karuzela - szablon HTML</title>
+	</head>
+	<body>
+		<nav class="nav navbar-default navbar-inverse">
+			<div class="container" style="height: 5vh" >
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#carousel-cell1">Flaga</a></li>
+						<li><a href="#carousel-cell2">Góry</a></li>
+						<li><a href="#carousel-cell3">Wierzowiec</a></li>
+						<li><a href="#carousel-cell4">Auto</a></li>
+						<li><a href="#carousel-cell5">Koncert</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+			
+		<div class="main-carousel" id="tutaj">
+			
+		</div>
+		<button class="button btn btn-warning btn-sm buttonreset">Reset</button>
+		<div id="page-wrapper" class="maper">
+			<div id="map"></div>
+		</div>
+		
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGfcdr_OWPOPMSv4flYo_J0h6Yhqt1wzg&callback=initMap"></script>
+
+		<div class="progress-bar"></div>
+		
+		<script id="slaid-template" type="x-tmpl-mustache">
+			<div class="container" id={{id}} >
+				<img  src="{{image}}" />
+				<div class="textfield">
+					<h2> {{title}} </h2>
+					<div class="description">
+						{{{description}}}	
+					</div>
+					
+				</div>
+			</div>
+		</script>
+				
+		<!-- Optional JavaScript -->
+		<script>
+		var slaidData = [
+			{
+				title: 'Flaga',
+				description: "<h4>Lorem ipsum.</h4> <p>Dolor sit.<p> ",
+				image: "images/1.jpg",
+				id: "carousel-cell1",
+				coords: {lat: 38.446, lng: -95.573}
+			},
+			{
+				title: 'Góry',
+				description: "<h4>Lorem ipsum.</h4> <p>Dolor sit.<p> ",
+				image: "images/2.jpeg",
+				id: "carousel-cell2",
+				coords: {lat: 51.763, lng: -116.183}
+			},
+			{
+				title: 'Wierzowiec',
+				description: "<h4>Lorem ipsum.</h4> <p>Dolor sit.<p> ",
+				image: "images/3.jpeg",
+				id: "carousel-cell3",
+				coords: {lat: 46.958, lng: 7.444}
+			},
+			{
+				title: 'Auto',
+				description: "<h4>Lorem ipsum.</h4> <p>Dolor sit.<p> ",
+				image: "images/4.jpeg",
+				id: "carousel-cell4",
+				coords: {lat: 23.116, lng: -82.366}
+			},
+			{
+				title: 'Koncert',
+				description: "<h4>Lorem ipsum.</h4> <p>Dolor sit.<p> ",
+				image: "images/5.jpeg",
+				id: "carousel-cell5",
+				coords: {lat: 11.265, lng: 75.7807}
+			}
+		];
+		</script>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="vendor/flickity.pkgd.min.js"></script>
+		<script src="vendor/hash.js"></script>
+		<script src="vendor/mustache/mustache.js"></script>
+		<script src="js/script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</body>
+</html>
