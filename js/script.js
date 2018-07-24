@@ -1,7 +1,6 @@
 "use strict";
 
 
-(function() {
 	var templateItem = document.getElementById('slaid-template').innerHTML;
 
 	Mustache.parse(templateItem);
@@ -13,9 +12,9 @@
 	    listItems += Mustache.render(templateItem, slaidData[i]);
 	}
 
-	var tutaj = document.getElementById('tutaj');
+	var here = document.getElementById('here');
 
-	tutaj.insertAdjacentHTML('beforeend', listItems);
+	here.insertAdjacentHTML('beforeend', listItems);
 
 	var flkty = new Flickity('.main-carousel', {
 	    // options
@@ -30,6 +29,9 @@
 	    progress = Math.max(0, Math.min(1, progress));
 	    progressBar.style.width = progress * 100 + '%';
 	});
+
+	
+
 
 	var buttonReset = document.querySelector('.buttonreset');
 
@@ -53,23 +55,22 @@
         var marker;
 
         var addMarker = function() {
-            for (var i = 0; i < slaidData.length; i++) {
-                	marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(slaidData[i]['coords']),
-                    map: map
-                });
-                google.maps.event.addListener(marker, 'click', function(event) {
-                	alert(i);
-                	console.log(flkty);
-                    flkty.select(i);
-                });
-            }
-
+          slaidData.forEach(function(data, index) {
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(data.coords),
+              map: map
+            });
+            google.maps.event.addListener(marker, "click", function() {
+              flkty.select(index);
+            });
+          });
         };
 
         addMarker();
 
-
+        flkty.on('change', function(index) {
+        	map.setCenter(slaidData[index].coords);
+        	map.setZoom = 4;
+        });
     }
 
-})();
