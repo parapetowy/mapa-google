@@ -69,7 +69,7 @@
   display: none;
 }
 
-.buttonreset {
+#button-reset {
   position: absolute;
   right: 5%;
   top: 5%;
