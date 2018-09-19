@@ -47,6 +47,6 @@ window.initMap = function() {
     addMarker();
     flkty.on('change', function(index) {
         map.setCenter(slaidData[index].coords);
-        map.setZoom = 4;
+        map.setZoom(4);
     });
 }
